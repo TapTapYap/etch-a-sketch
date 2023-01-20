@@ -16,4 +16,5 @@ body {
     height: 500px;
     width: 500px;
     flex-wrap: wrap;
+    flex-direction: column;
 }
