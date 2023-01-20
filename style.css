@@ -1,11 +1,17 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .block {
     border: black solid 1px;
     display: flex;
     flex: 1;
 }
 
-.gridContainer {
-    border: black solid 3px;
+#gridContainer {
+    border: red solid 3px;
     display: flex;
     height: 500px;
     width: 500px;
