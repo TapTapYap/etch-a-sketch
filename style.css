@@ -4,7 +4,7 @@ body {
     align-items: center;
 }
 
-.block {
+.row, .column {
     border: black solid 1px;
     display: flex;
     flex: 1;
