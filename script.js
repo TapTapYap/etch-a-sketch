@@ -1,9 +1,10 @@
 const gridContainer = document.getElementById('gridContainer');
-let column = ;
+let column = document.getElementsByClassName("column");
+let row = document.getElementsByClassName("row");
 
 function makeGrid() {
-    makeColumn();
-    makeRow();
+    makeColumn(16);
+    makeRow(16);
 }
 
 function makeColumn(columnDivs) {
@@ -23,4 +24,4 @@ function makeRow(rowDivs) {
     }
 }
 
-makeGrid(16);
+makeGrid();
