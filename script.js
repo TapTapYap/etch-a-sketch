@@ -2,10 +2,17 @@ const gridContainer = document.getElementById('gridContainer');
 let column = document.getElementsByClassName("column");
 let row = document.getElementsByClassName("row");
 
-/* Buttons for changing color and resetting the grid */
+/* Buttons for changing color, receiving input for size of grid and resetting the grid */
 
 let blackBtn = document.querySelector(".blackBtn");
+
 let rainbowBtn = document.querySelector(".rainbowBtn");
+
+let resetBtn = document.querySelector('.resetBtn');
+resetBtn.addEventListener('click', resetGrid);
+
+let sizeBtn = document.querySelector('.sizeBtn');
+sizeBtn.addEventListener('click', getSize);
 
 /* Mouse events to determine if the grids blocks should change color */
 
@@ -16,10 +23,6 @@ document.body.onmousedown = function() {
 document.body.onmouseup = function() {
     mouseDown = false;
 }
-
-/* Prompt user to input what size they want the grid to be. */
-
-
 
 /* Function to construct the grid. */
 
@@ -50,12 +53,25 @@ function changeColor(e) {
     }
 }
 
-function getSize(e) {
-    if (e > 100) {
-        alert("Size can not be greater than 100")
+/* Prompt user to input what size they want the grid to be. */
+
+function getSize() {
+    gridContainer.innerHTML = "";
+    let size = prompt('How big do you want the grid to be? ');
+
+    if (size > 100) {
+        alert("Size can not be greater than 100");
+        getSize();
+    }   else {
+        makeGrid(size, size);
     }
+}
+
+function resetGrid() {
+    gridContainer.innerHTML = "";
+    makeGrid(16, 16);
 }
 
 /* Call upon the makeGrid function */
 
-makeGrid(50, 50);
+makeGrid(32, 32);
