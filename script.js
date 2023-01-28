@@ -7,6 +7,7 @@ let row = document.getElementsByClassName("row");
 let blackBtn = document.querySelector(".blackBtn");
 
 let rainbowBtn = document.querySelector(".rainbowBtn");
+rainbowBtn.addEventListener('click', changeColor);
 
 let resetBtn = document.querySelector('.resetBtn');
 resetBtn.addEventListener('click', resetGrid);
@@ -44,12 +45,14 @@ function makeGrid(rowDivs, columnDivs) {
 /* Function used to determine which color to display */
 
 function changeColor(e) {
-    if (mouseDown) {
+    if (mouseDown && rainbowBtn) {
         let color1 = Math.floor(Math.random() * 256);
         let color2 = Math.floor(Math.random() * 256);
         let color3 = Math.floor(Math.random() * 256);
 
         e.target.style.backgroundColor = `rgb(${color1},${color2},${color3})`;
+    } else {
+        
     }
 }
 
