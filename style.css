@@ -2,6 +2,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+#btnContainer {
+    margin-top: 20px;
+    justify-content: space-evenly;
+    width: 400px;
+    display: flex;
 }
 
 .column {
