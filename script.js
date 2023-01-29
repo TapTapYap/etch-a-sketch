@@ -15,6 +15,15 @@ resetBtn.addEventListener('click', resetGrid);
 let sizeBtn = document.querySelector('.sizeBtn');
 sizeBtn.addEventListener('click', getSize);
 
+/* Function that sets the color being chosen by the user */
+
+const DEFAULT_COLOR = '#333333';
+let currentColor = DEFAULT_COLOR;
+
+function setCurrentColor(newColor) {
+    activateBtn(newColor)
+    currentColor = newColor;
+}
 
 /* Mouse events to determine if the grids blocks should change color */
 
