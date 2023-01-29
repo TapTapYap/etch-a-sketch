@@ -5,10 +5,10 @@ let row = document.getElementsByClassName("row");
 /* Buttons for changing color, receiving input for size of grid and resetting the grid */
 
 let blackBtn = document.querySelector(".blackBtn");
-blackBtn.addEventListener('click', setCurrentColor)
+blackBtn.addEventListener('click', () => setCurrentColor('black'));
 
 let rainbowBtn = document.querySelector(".rainbowBtn");
-rainbowBtn.addEventListener('click', setCurrentColor);
+rainbowBtn.addEventListener('click', () => setCurrentColor('rainbow'));
 
 let resetBtn = document.querySelector('.resetBtn');
 resetBtn.addEventListener('click', resetGrid);
@@ -18,11 +18,11 @@ sizeBtn.addEventListener('click', getSize);
 
 /* Function that sets the color being chosen by the user */
 
-const DEFAULT_COLOR = '#333333';
+const DEFAULT_COLOR = '#0a0a0a';
 let currentColor = DEFAULT_COLOR;
 
 function setCurrentColor(newColor) {
-    activateBtn(newColor)
+    activateBtn(newColor);
     currentColor = newColor;
 }
 
@@ -56,14 +56,16 @@ function makeGrid(rowDivs, columnDivs) {
 /* Function used to determine which color to display */
 
 function changeColor(e) {
-    if (mouseDown && rainbowBtn.value == 'true') {
+    if (mouseDown && currentColor === 'rainbow') {
         let color1 = Math.floor(Math.random() * 256);
         let color2 = Math.floor(Math.random() * 256);
         let color3 = Math.floor(Math.random() * 256);
 
         e.target.style.backgroundColor = `rgb(${color1},${color2},${color3})`;
-    } else if (mouseDown) {
+    } else if (mouseDown && currentColor === 'black') {
         e.target.style.backgroundColor = 'black';
+    } else if (mouseDown) {
+        e.target.style.backgroundColor = currentColor;
     }
 }
 
