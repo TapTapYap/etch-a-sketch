@@ -5,9 +5,10 @@ let row = document.getElementsByClassName("row");
 /* Buttons for changing color, receiving input for size of grid and resetting the grid */
 
 let blackBtn = document.querySelector(".blackBtn");
+blackBtn.addEventListener('click', setCurrentColor)
 
 let rainbowBtn = document.querySelector(".rainbowBtn");
-rainbowBtn.addEventListener('click', changeColor);
+rainbowBtn.addEventListener('click', setCurrentColor);
 
 let resetBtn = document.querySelector('.resetBtn');
 resetBtn.addEventListener('click', resetGrid);
