@@ -15,6 +15,7 @@ resetBtn.addEventListener('click', resetGrid);
 let sizeBtn = document.querySelector('.sizeBtn');
 sizeBtn.addEventListener('click', getSize);
 
+
 /* Mouse events to determine if the grids blocks should change color */
 
 let mouseDown = false;
@@ -73,6 +74,20 @@ function getSize() {
 function resetGrid() {
     gridContainer.innerHTML = "";
     makeGrid(16, 16);
+}
+
+function activateBtn(newColor) {
+    if (currentColor === 'rainbow') {
+        rainbowBtn.classList.remove('active');
+    }   else if (currentColor === 'black') {
+        blackBtn.classList.remove('active');
+    }
+
+    if (newColor === 'rainbow') {
+        rainbowBtn.classList.add('active');
+    }   else if (newColor === 'black') {
+        blackBtn.classList.add('active');
+    }
 }
 
 /* Call upon the makeGrid function */
