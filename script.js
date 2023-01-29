@@ -1,3 +1,5 @@
+/* Variables for HTML elements, building blocks of the grid */
+
 const gridContainer = document.getElementById('gridContainer');
 let column = document.getElementsByClassName("column");
 let row = document.getElementsByClassName("row");
@@ -83,10 +85,14 @@ function getSize() {
     }
 }
 
+/* Rests the grid */
+
 function resetGrid() {
     gridContainer.innerHTML = "";
     makeGrid(16, 16);
 }
+
+/* adds or removes and 'active' status based upon whether the buttons have been clicked */
 
 function activateBtn(newColor) {
     if (currentColor === 'rainbow') {
